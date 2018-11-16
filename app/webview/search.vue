@@ -6,6 +6,10 @@
       <Page :total="count" class="pagebar" :current="page" @on-change="change" />
     </flex>
   </div>
+  <div v-if="!list.length" class="not-found">
+    <div class="desc">No packages found.</div>
+    <div class="action">You can try load <a href="javascript:void(0);" v-redirect="'/package/' + keyword">/package/{{keyword}}</a> page to view.</div>
+  </div>
   <div class="wrap list">
     <flex class="item" v-for="item in list" :key="item.name" valign="middle" v-redirect="'/package/' + item.name">
       <flex class="left" :span="1" direction="column">
@@ -51,6 +55,16 @@
   }
 </script>
 <style lang="less" scoped>
+.not-found{
+  padding: 30px 0;
+  .desc, .action{
+    text-align: center;
+  }
+  .desc{
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+}
 .pagex{
   background-color: #f9f9f9;
   padding: 20px 0;

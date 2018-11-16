@@ -4,7 +4,7 @@
   "description": "The cpm-client project of wox",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config=build/webpack.development.js --hot --open --disable-host-check",
-    "build": "NODE_ENV=production webpack --config=build/webpack.production.js -p"
+    "build": "NODE_ENV=production webpack --config=build/webpack.production.js -p --progress"
   },
   "devDependencies": {
     "autoprefixer": "^9.3.1",
